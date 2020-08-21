@@ -18,9 +18,7 @@ import java.util.Set;
 @Entity
 @Table(name = "book")
 @JsonIgnoreProperties(value = "hasvalueforcopy")
-public class Book
-        extends Auditable
-{
+public class Book extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long bookid;

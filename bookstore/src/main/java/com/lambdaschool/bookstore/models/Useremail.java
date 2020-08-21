@@ -19,9 +19,7 @@ import javax.validation.constraints.Email;
  */
 @Entity
 @Table(name = "useremails")
-public class Useremail
-        extends Auditable
-{
+public class Useremail extends Auditable {
     /**
      * The primary key (long) of the useremails table
      */

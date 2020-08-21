@@ -3,9 +3,7 @@ package com.lambdaschool.bookstore.models;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class WroteId
-        implements Serializable
-{
+public class WroteId implements Serializable {
     private long author;
     private long book;
 

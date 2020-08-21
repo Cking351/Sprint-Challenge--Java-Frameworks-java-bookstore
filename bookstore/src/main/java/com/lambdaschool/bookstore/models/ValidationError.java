@@ -3,8 +3,7 @@ package com.lambdaschool.bookstore.models;
 /**
  * A model to report a validation error
  */
-public class ValidationError
-{
+public class ValidationError {
     /**
      * The code (String) for the validation error
      */

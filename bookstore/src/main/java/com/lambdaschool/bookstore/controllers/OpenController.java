@@ -125,8 +125,8 @@ public class OpenController
                                                                              headers);
 
         String theToken = restTemplate.postForObject(requestURI,
-                                                     request,
-                                                     String.class);
+                request,
+                String.class);
 
         return new ResponseEntity<>(theToken,
                                     responseHeaders,

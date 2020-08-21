@@ -1,7 +1,6 @@
 package com.lambdaschool.bookstore.services;
 
 import com.lambdaschool.bookstore.exceptions.ResourceFoundException;
-import com.lambdaschool.bookstore.exceptions.ResourceNotFoundException;
 import com.lambdaschool.bookstore.models.Author;
 import com.lambdaschool.bookstore.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,7 @@ import java.util.List;
 
 @Transactional
 @Service("authorService")
-public class AuthorServiceImpl
-        implements AuthorService
+public class AuthorServiceImpl implements AuthorService
 {
     @Autowired
     AuthorRepository authorrespos;
