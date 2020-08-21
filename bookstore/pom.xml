@@ -11,8 +11,8 @@
     <groupId>com.lambdaschool</groupId>
     <artifactId>bookstore</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>usermodel</name>
-    <description>Demo project for Spring Boot</description>
+    <name>bookstore</name>
+    <description>Bookstore project for Spring Boot</description>
 
     <properties>
         <java.version>14</java.version>
