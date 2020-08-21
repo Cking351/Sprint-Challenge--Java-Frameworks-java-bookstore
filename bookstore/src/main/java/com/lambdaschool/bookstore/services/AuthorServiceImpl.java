@@ -1,6 +1,7 @@
 package com.lambdaschool.bookstore.services;
 
 import com.lambdaschool.bookstore.exceptions.ResourceFoundException;
+import com.lambdaschool.bookstore.exceptions.ResourceNotFoundException;
 import com.lambdaschool.bookstore.models.Author;
 import com.lambdaschool.bookstore.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
