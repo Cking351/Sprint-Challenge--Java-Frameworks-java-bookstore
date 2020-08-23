@@ -14,9 +14,7 @@ import java.util.Map;
  * Class to override the error details provided by Spring Boot. We want to use our own format.
  */
 @Component
-public class CustomErrorDetails
-        extends DefaultErrorAttributes
-{
+public class CustomErrorDetails extends DefaultErrorAttributes {
     /**
      * Connects this class with the Helper Functions
      */

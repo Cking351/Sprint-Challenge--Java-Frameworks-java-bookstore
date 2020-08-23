@@ -13,10 +13,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "wrote")
 @IdClass(WroteId.class)
-public class Wrote
-        extends Auditable
-        implements Serializable
-{
+public class Wrote extends Auditable implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn(name = "authorid")

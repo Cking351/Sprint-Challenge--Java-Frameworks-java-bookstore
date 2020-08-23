@@ -25,9 +25,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "users")
-public class User
-        extends Auditable
-{
+public class User extends Auditable {
     /**
      * The primary key (long) of the users table.
      */

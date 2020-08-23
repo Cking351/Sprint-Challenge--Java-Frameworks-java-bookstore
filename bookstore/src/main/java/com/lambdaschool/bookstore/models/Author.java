@@ -14,9 +14,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "author")
-public class Author
-        extends Auditable
-{
+public class Author extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonIgnoreProperties("authorid")

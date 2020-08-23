@@ -6,8 +6,7 @@ import javax.validation.constraints.Email;
  * A model used to create a new user. The minimum information needed to create a user.
  * Note the role will default to USER.
  */
-public class UserMinimum
-{
+public class UserMinimum {
     /**
      * The username (String)
      */

@@ -78,7 +78,7 @@ public class OpenController
         // add the default role of user
         Set<UserRoles> newRoles = new HashSet<>();
         newRoles.add(new UserRoles(newuser,
-                                   roleService.findByName("user")));
+                roleService.findByName("user")));
         newuser.setRoles(newRoles);
 
         newuser = userService.save(newuser);
@@ -93,14 +93,9 @@ public class OpenController
 
         // return the access token
         // To get the access token, surf to the endpoint /login just as if a client had done this.
-        // You cannot use a port when on Heroku
-        String port = "";
-        if (httpServletRequest.getServerName()
-                .equalsIgnoreCase("localhost"))
-        {
-            port = ":" + httpServletRequest.getLocalPort();
-        }
-        String requestURI = "http://" + httpServletRequest.getServerName() + port + "/login";
+        RestTemplate restTemplate = new RestTemplate();
+        String requestURI = "http://" + httpServletRequest.getServerName() +
+                (httpServletRequest.getServerName().equalsIgnoreCase("localhost") ? ":" + httpServletRequest.getLocalPort() : "") + "/login";
 
         List<MediaType> acceptableMediaTypes = new ArrayList<>();
         acceptableMediaTypes.add(MediaType.APPLICATION_JSON);
@@ -109,7 +104,7 @@ public class OpenController
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         headers.setAccept(acceptableMediaTypes);
         headers.setBasicAuth(System.getenv("OAUTHCLIENTID"),
-                             System.getenv("OAUTHCLIENTSECRET"));
+                System.getenv("OAUTHCLIENTSECRET"));
 
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("grant_type",
@@ -122,15 +117,15 @@ public class OpenController
                 newminuser.getPassword());
 
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map,
-                                                                             headers);
+                headers);
 
         String theToken = restTemplate.postForObject(requestURI,
-                                                     request,
-                                                     String.class);
+                request,
+                String.class);
 
         return new ResponseEntity<>(theToken,
-                                    responseHeaders,
-                                    HttpStatus.CREATED);
+                responseHeaders,
+                HttpStatus.CREATED);
     }
 
     /**

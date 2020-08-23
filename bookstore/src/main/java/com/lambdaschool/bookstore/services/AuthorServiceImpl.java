@@ -13,8 +13,7 @@ import java.util.List;
 
 @Transactional
 @Service("authorService")
-public class AuthorServiceImpl
-        implements AuthorService
+public class AuthorServiceImpl implements AuthorService
 {
     @Autowired
     AuthorRepository authorrespos;
